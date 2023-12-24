@@ -1,0 +1,15 @@
+<div class="food-card p-5 ">
+    <div class="d-flex justify-content-between align-items-center">
+       <span><h3>Update Category</h3></span> 
+  
+      <span (click)="onClose()"><i class="fa-solid fa-xmark-circle fa-2x" ></i></span> 
+    </div>
+      
+  
+<input type="text" placeholder="Category" class="my-3 form-control p-2" >
+<div class="form-register">
+<button class="green-btn me-auto" [mat-dialog-close]="category" >Update</button>
+
+</div>
+
+</div>

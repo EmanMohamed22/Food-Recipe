@@ -1,0 +1,15 @@
+<section class="navbar-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 ms-auto">
+                <div class="profile pointer" routerLink="profile">
+                    <div class="profile-img" *ngIf="user">
+                        <img *ngIf="user.imagePath"  [src]="'https://upskilling-egypt.com/'+user.imagePath" alt="">
+                        <img *ngIf="!user.imagePath" src="../../../assets/images/beautiful-latin-woman-avatar-character-icon-vector-33983177.jpg" alt="">
+                    </div>
+                    <span class="text-success ps-2">{{user?.userName}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

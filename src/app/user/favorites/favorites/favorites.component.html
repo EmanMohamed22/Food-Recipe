@@ -1,0 +1,43 @@
+<section class="recipe1">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-9 ps-3">
+                   <div class="">
+                    <span>
+                       Favorites Recipes 
+                     </span>
+                     <p class="mt-2">This is a welcoming screen for the entry of the application , you can now see the options</p>
+              
+                </div>
+             
+            </div>
+            <div class="col-md-3">
+             <div class="image text-end">
+                <img src="../../../assets/images/Group 48102127.svg" class="w-75" alt="">
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="fav-card">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 p-4" *ngFor="let item of favorites">
+                <div class="card shadow-sm" >
+                    <div class="card-img h-75">
+                        <div class="card-img-icon " (click)="deleteOneFav(item.id)">
+                           <i class="fa-solid fa-trash"></i>
+                        </div>
+                        <img *ngIf="item.recipe.imagePath" [src]="'https://upskilling-egypt.com:443/'+item.recipe.imagePath" alt="" class="w-100">
+                         <div class="h-100 d-flex justify-content-center align-items-center" *ngIf="!item.recipe.imagePath">
+                            <h2>No Image</h2></div>
+                    </div>
+                   <div class="card-text ps-2 pt-2">
+                    <h3>{{item.recipe.name}}</h3>
+                    <h4>{{item.recipe.description.split("").slice(0,30).join("")}}</h4>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,84 @@
+<section class="category1">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-9">
+                <div class="content ">
+                   <div class="">
+                    <span>
+                        Categories 
+                       
+                     </span>
+                     <p class="mt-2">This is a welcoming screen for the entry of the application , you can now see the options</p>
+              
+                   </div>
+                </div>
+             
+            </div>
+            <div class="col-md-3">
+             <div class="image text-end">
+                <img src="../../../assets/images/Group 48102127.svg" class="w-75" alt="">
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="category2 mt-5">
+    <div class="container">
+       <div class="row">
+        <div class="col-md-8">
+            <div class="search">
+                <input type="text" placeholder="Search By Name" [(ngModel)]="searchValue" (keyup)="search()" class="form-control border-2 p-3 " >
+            </div>
+        </div>
+        <div class="col-md-4 text-end">
+            <div class="add-btn ">
+                <button class="green-btn mt-0" (click)="openAddDialog()">Add Category</button>
+            </div>
+        </div>
+       </div>
+        
+       
+        <table class="">
+            <thead>
+               <th>Name</th>
+               <th>Creation Date</th>
+                 <th>Modified Date</th>
+              <th> Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tableData" >
+                    <td>{{item.name}}</td>
+                    <td>{{item.creationDate | date:'dd - MM - yyyy,hh - mm a'}}</td>
+                    <td>{{item.modificationDate| date:'dd - MM - yyyy,hh-mm-a'}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis fa-2x"></i>
+                            </button>
+                            <ul class="dropdown-menu ">
+                              <li><button class="dropdown-item p-2" type="button" (click)="openDelDialog(item)"> <i class="fa-solid fa-trash px-1"></i> Delete</button></li>
+                              <li><button class="dropdown-item p-2" type="button" (click)="openUpdateDialog(item)"><i class="fa-solid fa-pen px-1"></i>  Update</button></li>
+                              
+                            </ul>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bg-info">
+            <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="tableResponse?.totalNumberOfRecords"
+               [pageSize]="tableResponse?.pageSize"
+               
+              
+               [pageSizeOptions]=" [5,10,15,20]"
+            
+               [pageIndex]="tableResponse?.pageNumber"
+               aria-label="Select page">
+</mat-paginator>
+        </div>
+    </div>
+</section>
+

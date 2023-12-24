@@ -1,0 +1,25 @@
+<section class="food-card p-3">
+    <div class="content d-flex align-items-center justify-content-between">
+        <div class="content-header">
+            <h3 >{{data.name}}</h3>
+        </div>
+        <div>
+            <span (click)="onClose()" class="pointer text-danger"><i class="fa-solid fa-xmark-circle fa-2x"></i></span>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <div class="m-auto w-50">
+            <img [src]="'https://upskilling-egypt.com:443/'+data.imagePath" alt="" class="">
+        </div>
+       
+        
+    </div>
+    <div class="mt-1">
+        <h3>Price: <span> {{data.price}}</span></h3>
+        <h3>Description: <span>{{data.description}}</span></h3>
+    </div>
+    <div class="text-end">
+        <button [mat-dialog-close]="data.id" class="btn btn-outline-danger py-1 px-3 my-2"><span class="pe-1"><i class="fa-regular fa-heart"></i></span>Favorite</button>
+    </div>
+    </section>

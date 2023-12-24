@@ -1,0 +1,123 @@
+<section class="recipe1">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-9 ps-3">
+                   <div class="">
+                    <span>
+                       Recipes 
+                     </span>
+                     <p class="mt-2">This is a welcoming screen for the entry of the application , you can now see the options</p>
+              
+                </div>
+             
+            </div>
+            <div class="col-md-3">
+             <div class="image text-end">
+                <img src="../../../assets/images/Group 48102127.svg" class="w-75" alt="">
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="category2 mt-5">
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-md-6">
+                <div class="search">
+                    <input type="text" placeholder="Search" [(ngModel)]="searchValue" (keyup)="search()" class="form-control border-2 p-3 my-5" >
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select border-2 p-3 my-5 ms-2" aria-label="Default select example"[(ngModel)]='tagId' (change)="getTableData()">
+                    <option selected value="0">All Tags</option>
+                    <option  [value]="tag.id" *ngFor="let tag of tags" class="py-1" >{{tag.name}}</option>
+                   
+                  </select>
+            </div>
+            <div class="col-md-3 ps-2">
+                <select class="form-select border-2 p-3 my-5 ms-2" aria-label="Default select example"[(ngModel)]='categoryName' (change)="getTableData()">
+                    <option selected value="0">All Categories</option>
+                    <option  [value]="category.id" *ngFor="let category of categories" class="py-1" >{{category.name}}</option>
+                   
+                  </select>
+            </div>
+        </div>
+       
+        <table >
+            <thead>
+<th>Name</th>
+<th>Image</th>
+<th>Price</th>
+<th> Description</th>
+<th> Tag</th>
+<th> Category</th>
+<th> Actions</th>
+
+            </thead>
+            <tbody *ngIf="tableData.length>0">
+                <tr *ngFor="let item of tableData" class="py-3">
+                    <td>{{item.name}}</td>
+                    <td>
+                         <div class="table-img">
+                       <img [src]="'https://upskilling-egypt.com:443/'+item.imagePath" alt="" class="w-75">
+                    </div>
+                    </td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.description.split("").slice(0,10).join("")}}</td>
+                    <td>{{item.tag.name}}</td>
+                    <td>
+                        <ng-container *ngIf="item.category.length>0">
+                            <span *ngFor=" let itemCat of item.category" >{{itemCat.name}}</span>
+                        </ng-container>
+                        <span *ngIf="item.category.length==0" >No Category</span>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="border-0 bg-transparent " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                            </button>
+                            <ul class="dropdown-menu ">
+                              <li><button class="dropdown-item p-2" type="button" (click)="openViewDialog(item)"><i class="fa-solid fa-eye px-1"></i> View</button></li>
+                              <li ><button class="dropdown-item p-2 hover" type="button" (click)="onAddToFav(item.id)" >
+                                <i class="fa-heart fa-regular "></i> Favorite</button></li>
+                              
+                            </ul>
+                          </div>
+                    </td>
+
+                       
+                        
+                   
+                </tr>
+            </tbody>
+            
+               
+         
+           
+        </table>
+        <div *ngIf="tableData.length==0" class="text-center mt-5">
+             <div class="w-25 m-auto ">
+                <img src="../../../../assets/images/delete-img.svg" alt="" class="">
+             </div>       
+            <span class="fs-1">No Data</span>
+        </div>
+        <div class="bg-info">
+            <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="tableResponse?.totalNumberOfRecords"
+               [pageSize]="tableResponse?.pageSize"
+               
+              
+               [pageSizeOptions]=" [5,30,20,50]"
+            
+               [pageIndex]="tableResponse?.pageNumber"
+               aria-label="Select page">
+</mat-paginator>
+        </div>
+    </div>
+</section>
+
+
+

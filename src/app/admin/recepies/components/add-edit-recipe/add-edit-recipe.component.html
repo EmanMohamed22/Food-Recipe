@@ -1,0 +1,111 @@
+ <section class="">
+         <div class="add-recipe">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-md-9">
+                         <h3>Fill The <span class="text-success fw-bold">Recipes</span></h3>
+                         <p> you can now fill the meals easily using the table and form , click here and sill it with the table !</p>
+                     </div>
+                     <div class="col-md-3">
+                         <button class="green-btn" routerLink="/dashboard/dashboard/admin/recepies">All Recipes</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="container px-5">
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <form action="" class="form-control  border-0 food-card shadow-sm" [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm)">
+                        <div class="row ">
+                            <div class="col-md-12">
+                               <div class="input-group flex-nowrap mb-3">
+                                   <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+   
+                                <input type="text" placeholder="Recipe Name"  class="form-control" formControlName="name">
+                            </div>
+                            <div class="alert alert-danger p-2 my-2" *ngIf="dataForm.get('name')?.touched && dataForm.get('name')?.status == 'INVALID'">
+                                <p *ngIf="dataForm.get('name')?.getError('required')">name is required</p>
+                                <p *ngIf="dataForm.get('name')?.getError('pattern')">only chars ,min 2 and max 20</p>
+                            </div>
+                           </div>
+                            <div class="col-md-12">
+                               <div class="input-group flex-nowrap mb-3">
+                                   <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+   
+                                <input type="text" placeholder="Price"  class="form-control" formControlName="price">
+                            </div>
+                           </div>
+                           <div class="alert alert-danger p-2 my-2" *ngIf="dataForm.get('price')?.touched && dataForm.get('price')?.status == 'INVALID'">
+                            <p *ngIf="dataForm.get('price')?.getError('required')">price is required</p>
+                            <p *ngIf="dataForm.get('price')?.getError('pattern')">only numbers</p>
+                        </div>
+                           
+                            <div class="col-md-6 pe-1">
+                               <div class="input-group flex-nowrap mb-3">
+                                   <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+   
+                             
+                                <select class="form-select border-1 py-1"  formControlName="tagId" aria-label="Default select example" >
+                                    <option selected value="0">All Tags</option>
+                                    <option  [value]="tag.id" *ngFor="let tag of tags" class="py-1" >{{tag.name}}</option>
+                                   
+                                  </select>
+                            </div>
+                            <div class="alert alert-danger p-2 my-2" *ngIf="dataForm.get('tagId')?.touched && dataForm.get('tagId')?.status == 'INVALID'">
+                                <p *ngIf="dataForm.get('tagId')?.getError('required')">Tag is required</p>
+                              
+                            </div>
+                        </div>
+                       
+                            <div class="col-md-6 ps-1">
+                               <div class="input-group flex-nowrap mb-3">
+                                   <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+                                   <select class="form-select border-1 py-1"  formControlName="categoriesIds" aria-label="Default select example" >
+                                    <option selected class="" value="0">All Categories</option>
+                                    <option  [value]="category.id" *ngFor="let category of categories" class="py-1" >{{category.name}}</option>
+                                   
+                                  </select>
+                    
+                            </div>
+                            <div class="alert alert-danger p-2 my-2" *ngIf="dataForm.get('categoriesIds')?.touched && dataForm.get('categoriesIds')?.status == 'INVALID'">
+                                <p *ngIf="dataForm.get('categoriesIds')?.getError('required')">Category is required</p>
+                               
+                            </div>
+                        </div>
+                       
+                            <div class="col-md-12">
+                               <div class="input-group flex-nowrap mb-3">
+                                <textarea  class="form-control py-2 " placeholder="Description" formControlName="description"></textarea>
+                            </div>
+                           
+                            </div>
+                            <div class="alert alert-danger p-2 my-2" *ngIf="dataForm.get('description')?.touched && dataForm.get('description')?.status == 'INVALID'">
+                                <p *ngIf="dataForm.get('description')?.getError('required')">Description is required</p>
+                                <p *ngIf="dataForm.get('description')?.getError('maxLength')">only chars and max 50</p>
+                               </div>
+                            <div class="col-md-12">
+                                <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+                                    <ngx-dropzone-label *ngIf="!imgSrc">Drag and Drop image <span class="text-success fw-bold">Choose image </span>to upload</ngx-dropzone-label>
+                                    <ngx-dropzone-label *ngIf="imgSrc"> 
+                                    <img [src]="imgSrc" alt="" class="w-25">
+                                    </ngx-dropzone-label>
+                                   
+                                    <ngx-dropzone-image-preview [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+                                        <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label>
+                                      </ngx-dropzone-image-preview>
+                                </ngx-dropzone>
+                                </div>
+                               
+                            <div class="form-button text-end mt-2">
+                                <button type="button" class="btn btn-outline-success" routerLink="/dashboard/dashboard/admin/recepies">Cancel</button>
+                                <button type="submit" class="btn btn-success" [disabled]="dataForm.invalid">Save</button>
+                            </div>
+                        </div>
+                       
+                     </form>
+                </div>
+            </div>
+            
+         
+         </div>
+     </section>

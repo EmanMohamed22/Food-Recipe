@@ -1,0 +1,18 @@
+
+
+<section class="h-100">
+    <div class="container-fluid h-100">
+        <div class="row h-100 transition">
+            <div class="p-0"  [ngClass]="isOpened?'col-md-1':'col-md-2'">
+                <app-sidebar (toggle)="toggle($event)"></app-sidebar></div>
+            <div class=" p-4" [ngClass]="isOpened?'col-md-11':'col-md-10'">
+                <app-navbar></app-navbar>
+                <div class="p-2" >
+                    <router-outlet></router-outlet>
+                </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->

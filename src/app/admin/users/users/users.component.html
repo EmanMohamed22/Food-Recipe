@@ -1,0 +1,97 @@
+<section class="users1">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-9 ps-3">
+                   <div class="">
+                    <span>
+                       Users List
+                     </span>
+                     <p class="mt-2">You can now add your items that any user can order it from the Application and you can edit</p>
+              
+                </div>
+             
+            </div>
+            <div class="col-md-3">
+             <div class="image text-end">
+                <img src="../../../assets/images/Group 48102127.svg" class="w-75" alt="">
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="category2 mt-5">
+    <div class="container">
+      
+        <div class="row">
+            <div class="col-md-6">
+                <div class="search">
+                    <input type="text" placeholder="Search By Name" [(ngModel)]="searchValue" (keyup.enter)="search()" class="form-control border-2 p-3 my-5" >
+                </div>
+            </div>
+           
+        </div>
+       
+        <table >
+            <thead>
+<th>Name</th>
+<th>Image</th>
+<th>Country</th>
+<th> Email</th>
+<th> Role</th>
+
+<th> Actions</th>
+            </thead>
+            <tbody *ngIf="tableData.length>0">
+                <tr *ngFor="let item of tableData" class="py-3">
+                    <td>{{item.userName}}</td>
+                    <td class="w-25">
+                         <div class="table-img ">
+                       <img [src]="'https://upskilling-egypt.com:443/'+item.imagePath" alt="" class="w-75">
+                    </div>
+                    </td>
+                    <td>{{item.country}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.group.name}}</td>
+                   
+                    <td>
+                        
+                              <button class="dropdown-item p-2" type="button" (click)="openDelDialog(item)"><i class="fa-solid fa-trash px-1"></i></button>
+                   
+                    </td>
+                </tr>
+            </tbody>
+            <div *ngIf="tableData.length==0" class="text-center mt-5">
+                <div class="w-25 m-auto ">
+                   <img src="../../../../assets/images/delete-img.svg" alt="" class="">
+                </div>       
+               <span class="fs-1">No Data</span>
+           </div>
+               
+         
+           
+        </table>
+        <div *ngIf="tableData.length==0" class="text-center mt-5">
+             <div class="w-25 m-auto ">
+                <img src="../../../../assets/images/delete-img.svg" alt="" class="">
+             </div>       
+            <span class="fs-1">No Data</span>
+        </div>
+        <div class="bg-info">
+            <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="tableResponse?.totalNumberOfRecords"
+               [pageSize]="tableResponse?.pageSize"
+               
+              
+               [pageSizeOptions]=" [10,30,40]"
+            
+               [pageIndex]="tableResponse?.pageNumber"
+               aria-label="Select page">
+</mat-paginator>
+        </div>
+    </div>
+</section>
+
+
+

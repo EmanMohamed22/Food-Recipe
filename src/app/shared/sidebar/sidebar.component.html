@@ -1,0 +1,35 @@
+<section>
+    <div class="logo pointer m-auto " [ngClass]="isOpened?'w-100':'w-75'" (click)="toggleIcon()" >
+        <img src="../../../assets/images/1.svg" alt="" >
+    </div>
+    <ng-container *ngFor="let item of menu">
+        <a [routerLink]="item.link"  routerLinkActive="bg-active" *ngIf="item.isActive">
+            <div class="content">
+                <div class="content-li " [ngClass]="isOpened?'fs-2':'fs-5'">
+                   
+                    <span><i [class]="item.icon" style="color: #ffffff;"></i></span>
+                    <span  [ngClass]="isOpened?'d-none':'d-inline'">{{item.title}}</span>
+                </div>
+            </div>
+           </a>
+    </ng-container>
+    
+   
+  
+    <div class="content">
+        <div class="content-li pointer" (click)="openDialog()" [ngClass]="isOpened?'fs-2':'fs-5'">
+            <span><i class="fa-solid fa-lock-open" style="color: #ffffff; "></i></span>
+            <span  [ngClass]="isOpened?'d-none':'d-inline'">change password</span>
+        </div>
+    </div>
+  
+   
+    <div class="content">
+        <div class="content-li pointer" (click)="logout()" [ngClass]="isOpened?'fs-2':'fs-5'">
+            <span ><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></span>
+            <span  [ngClass]="isOpened?'d-none':'d-inline'">log out</span>
+        </div>
+    </div>
+   
+   
+</section>

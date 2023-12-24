@@ -1,0 +1,28 @@
+<div class="food-card p-5 ">
+    <h3>Verify Email</h3>
+    <form [formGroup]="verifyForm" (ngSubmit)="onSubmit(verifyForm)" >
+        <div class="input-group flex-nowrap mb-3" >
+            <span class="input-group-text p-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+            <input type="email" class="form-control py-2" formControlName="email"   placeholder="Email" aria-label="email" aria-describedby="addon-wrapping">
+            
+        </div>
+        <div class="alert alert-danger p-2 my-2" *ngIf="verifyForm.get('email')?.touched && verifyForm.get('email')?.status == 'INVALID'">
+            <p *ngIf="verifyForm.get('email')?.getError('required')">Email is required</p>
+            <p *ngIf="verifyForm.get('email')?.getError('pattern')">test@gmail.com</p>
+        </div>
+        <div class="input-group flex-nowrap mb-3" >
+            <span class="input-group-text p-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+            <input type="text" class="form-control py-2" formControlName="code" placeholder="OTP" aria-label="code" aria-describedby="addon-wrapping">
+            
+        </div>
+        <div class="alert alert-danger p-2 my-2" *ngIf="verifyForm.get('code')?.touched && verifyForm.get('code')?.status == 'INVALID'">
+            <p *ngIf="verifyForm.get('code')?.getError('required')">code is required</p>
+          
+        </div>
+        
+    <button  class="form-control green-btn"[disabled]="verifyForm.invalid" >Send</button>
+    </form>
+    
+   
+</div>
+

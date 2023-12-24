@@ -1,0 +1,104 @@
+.food-card{
+    background-color: white;
+    padding: 1rem 3rem;
+    border-radius: 16px;
+}
+form{
+    margin-top: 1.5rem;
+    .input-group{  
+        &-text{
+            font-size: 1.1rem;
+            padding: 0 .5rem;
+            background-color: $background;
+
+        }
+        input,textarea,select{
+            background-color: $background;
+            padding-left: .5rem;
+        }
+        
+    }
+    .form-register{
+        margin-top: .8rem;
+        display: flex;
+        justify-content: space-between;
+    }
+   
+}
+table{
+    width: 100%;
+    th{
+        text-align: left;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        border-bottom: 1px solid $dark-bg;
+        font-weight: 600;
+        color: $dark-bg;
+    }
+    tr{
+        
+        border-bottom: 1px solid $dark-bg;
+        padding-left: 5px;
+        &:nth-child(even){
+            background-color: $light-bg;
+        }
+        td{
+            padding:15px 0 15px 10px;
+          
+        }
+    }
+}
+.login-card-logo{
+    margin: auto;
+    width: 22rem;
+}
+.green-btn{
+    background-color: $btn-bg;
+    margin-top: 2rem;
+    margin-bottom: 9px;
+    font-size: 1.25rem;
+font-weight: 400;
+text-transform: capitalize;
+color: $color-white;
+padding: .75rem 1.5rem;
+border-radius: 10px;
+border: 0;
+}
+.green{
+    color: $btn-bg;
+}
+// .eye-icon{
+//     position: absolute;
+//     right: 3%;
+//     transform: translateY(50%);
+//     cursor: pointer;
+//     z-index: 99;
+// }
+button[disabled]{
+    background-color: #64ad71 ;
+}
+.bg-active{
+    background-color: rgba(0, 146, 71, 0.1);
+    border-left: 10px solid $dark-bg;
+    transition: all .5s;
+}
+.pointer{
+    cursor: pointer;
+}
+table{
+    margin: 20px 0;
+}
+
+.hover:hover{
+    color: red;
+}
+.close-icon{
+    text-align: end;
+    cursor: pointer;
+}
+.close-icon:hover{
+   color:red;
+}
+.transition{
+    transition: all 1s ease-in-out;
+}

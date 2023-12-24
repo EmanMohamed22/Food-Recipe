@@ -1,0 +1,62 @@
+<section class="login d-flex align-items-center">
+    <div class="container m-auto">
+        <div class="row ">
+            <div class="col-md-6 mx-auto ">
+                <div class="login-card food-card">
+                    <div class="login-card-logo">
+                        <img src="../../../../assets/logo1.svg" alt="">
+                    </div>
+                   
+                  <div class="login-card-form">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                        <h2>log in</h2>
+                        <h4>Welcome Back! please enter your details</h4>
+                        <div class="input-group flex-nowrap mb-3">
+                            <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-mobile-screen"></i></span>
+                            <input type="email" class="form-control py-2" formControlName="email" placeholder="Enter Your Email" aria-label="email" aria-describedby="addon-wrapping">
+                            
+                        </div>
+                        <div class="alert alert-danger p-2 my-2" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.status == 'INVALID'">
+                            <p *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+                            <p *ngIf="loginForm.get('email')?.getError('pattern')">test@gmail.com</p>
+                        </div>
+                          <div class="input-group flex-nowrap mb-3 position-relative" >
+                            <span class="input-group-text py-2" id="addon-wrapping"><i class="fa-solid fa-lock"></i></span>
+                            <input [type]="hide?'password':'text'" class="form-control py-2" formControlName="password" placeholder="Password"  aria-label="password" aria-describedby="addon-wrapping">
+                            <div  class="eye-icon" (click)="hide=!hide">
+                                <i  class="fa-solid "  [class]="hide?'fa-eye-slash': 'fa-eye'"></i>
+                                <!-- <button
+                                type="button"
+                                mat-icon-button
+                                matSuffix
+                                (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide"
+                              >
+                                <mat-icon>{{
+                                  hide ? "visibility_off" : "visibility"
+                                }}</mat-icon>
+                              </button> -->
+                            </div>
+                           
+                        </div>
+                        <div class="alert alert-danger p-2 my-2" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.status == 'INVALID'">
+                            <p *ngIf="loginForm.get('password')?.getError('required')">password is required</p>
+                            <p *ngIf="loginForm.get('password')?.getError('pattern')">Password must contain 1 uppercase char at least and special char </p>
+                         
+                        </div>
+                          <div class="form-register">
+                            <a routerLink="/auth/register" class="text-muted ">Register Now?</a>
+                            <a class="green"   (click)="openDialog()">Forget Password?</a>
+                          </div>
+                          <button class="form-control green-btn" [disabled]="loginForm.invalid">log in</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+           
+        </div>
+       
+    </div>
+
+</section>

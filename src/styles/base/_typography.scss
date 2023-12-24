@@ -1,0 +1,27 @@
+
+//   @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Inter:wght@900&family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap');
+
+ 
+ $main-font: sans-serif;;
+
+
+
+ h2{
+    font-size: 2rem;
+    color: $primary-font;
+    text-transform: capitalize;
+    font-weight: 600;
+ }
+ h4{
+    font-size: 1rem;
+    color: $sec-font;
+    margin-bottom: 1rem;
+    font-weight: 500;
+ }
+ h3{
+    font-size: 1.5rem;
+    color: $primary-font;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+ }

@@ -1,0 +1,27 @@
+@import "../../../../styles/main.scss";
+.recipe1 {
+  margin-top: 20px;
+  // background-image: url(../../../assets/images/header-bg-svg.svg);
+padding: 10px;
+background-color: $dark-bg;
+border-radius: 15px;
+
+  .row {
+   
+    align-items: center;
+  
+}
+span {
+  color: #fff;
+  font-size: 2rem;
+}
+
+p {
+  color: #fff;
+  font-size: 1rem;
+}
+}
+.table-img {
+  height: 50px;
+  width: 50px;
+}

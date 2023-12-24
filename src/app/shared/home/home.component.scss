@@ -1,0 +1,43 @@
+@import "../../../styles/main.scss";
+
+.home-section{
+    margin-top: 20px;
+    // background-image: url(../../../assets/images/header-bg-svg.svg);
+padding: 10px;
+background-color: $dark-bg;
+border-radius: 15px;
+  
+    .row{
+       
+    align-items: center;
+    
+        span{
+            color: #fff;
+            font-size: 2rem;
+           
+        }
+         
+        p{
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+   }
+    
+   #sec-section{
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: $light-bg;
+    .add-recipe{
+        padding: 30px 10px;
+       
+       
+    }
+.form-button{
+   
+    button{
+        padding: 7px 15px;
+        margin-left: 10px;
+    }
+}
+}

@@ -1,0 +1,35 @@
+@import "../../../../styles/main.scss";
+
+.category1{
+    margin-top: 20px;
+    // background-image: url(../../../assets/images/header-bg-svg.svg);
+padding: 10px;
+background-color: $dark-bg;
+border-radius: 15px;
+  
+    .content{
+        display: flex;
+    align-items: center;
+    padding: 2rem;
+    height: 100%;
+        span{
+            color: #fff;
+            font-size: 2rem;
+           
+        }
+         
+        p{
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+
+    
+   }
+  .category2{
+    .add-btn{
+        button{
+            padding: 15px 50px ;
+        }
+    } 
+  }

@@ -1,0 +1,29 @@
+@import "../../../styles/main.scss";
+
+section{
+    background-color: $color-black;
+    border-top-right-radius: 3.6rem;
+    height: 100%;
+    .logo{
+        transition: all .5s;
+    }
+    a{
+        display: block;
+    }
+    .content{
+        &-li{
+            color: white;
+            font-size: 1.2rem;
+            padding:4px 0 4px 1rem;
+            margin: 1rem 0;
+            
+           span{
+            margin-left: 10px;
+            text-transform: capitalize;
+            transition: all .5s;
+           }
+           
+        }
+    }
+   
+}

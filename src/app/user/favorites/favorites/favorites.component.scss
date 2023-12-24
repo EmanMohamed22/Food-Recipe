@@ -1,0 +1,44 @@
+@import "../../../../styles/main.scss";
+.recipe1 {
+  margin-top: 20px;
+    // background-image: url(../../../assets/images/header-bg-svg.svg);
+padding: 10px;
+background-color: $dark-bg;
+border-radius: 15px;
+  
+  .row {
+   
+    align-items: center;
+  
+}
+span {
+  color: #fff;
+  font-size: 2rem;
+}
+
+p {
+  color: #fff;
+  font-size: 1rem;
+}
+}
+#fav-card{
+   .card{
+    height: 350px;
+    .card-img{
+
+      position: relative;
+      overflow: hidden;
+      &-icon{
+          position: absolute;
+          top: 5%;
+          right: 5%;
+          background-color: white;
+          padding: 5px;
+          border: 1px solid red;
+          border-radius: 5px 7px;
+          color: red;
+          cursor: pointer;
+      }
+  }
+   }
+}

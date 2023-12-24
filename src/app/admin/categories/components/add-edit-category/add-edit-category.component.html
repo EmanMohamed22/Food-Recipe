@@ -1,0 +1,24 @@
+<div class="food-card p-5 ">
+             <div class="d-flex justify-content-between align-items-center">
+                <span><h3>Category</h3></span> 
+           
+               <span (click)="onClose()"><i class="fa-solid fa-xmark-circle fa-2x" ></i></span> 
+             </div>
+               
+             <form [formGroup]="categoryForm" (ngSubmit)="categoryForm">
+
+              <input type="text" placeholder="Category" class="my-3 form-control p-2" formControlName="category" aria-label="category" aria-describedby="addon-wrapping">
+    <div class="form-register">
+        <button class="green-btn me-auto" [mat-dialog-close]="categoryForm.value.category" *ngIf="!data">Add</button>
+        <button class="green-btn me-auto" [mat-dialog-close]="categoryForm.value.category" *ngIf="data ">Update</button>
+     
+      </div>  
+              
+             
+              
+         
+          </form> 
+   
+   
+</div>
+
