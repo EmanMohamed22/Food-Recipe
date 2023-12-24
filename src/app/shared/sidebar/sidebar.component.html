@@ -1,6 +1,6 @@
 <section>
     <div class="logo pointer m-auto " [ngClass]="isOpened?'w-100':'w-75'" (click)="toggleIcon()" >
-        <img src="../../../assets/images/1.svg" alt="" >
+        <img src="assets/images/1.svg" alt="" >
     </div>
     <ng-container *ngFor="let item of menu">
         <a [routerLink]="item.link"  routerLinkActive="bg-active" *ngIf="item.isActive">
