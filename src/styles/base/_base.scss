@@ -21,7 +21,7 @@ html{
     font-size: 100%;   // 1rem=16px  
      
     @include response(desktop){
-        font-size: 12px;
+        font-size: 10px;
     }
     @include response(tablet){
         font-size: 9px;
