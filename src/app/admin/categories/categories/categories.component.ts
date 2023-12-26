@@ -94,7 +94,7 @@ openDelDialog(data:any): void {
     console.log('The dialog was closed');
     console.log(result);
     if(result){
-       this.delCategory(result)
+       this.delCategory(result.id)
     }
     
   });

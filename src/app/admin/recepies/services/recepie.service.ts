@@ -21,7 +21,7 @@ export class RecepieService {
     return this._http.delete(`Recipe/${id}`)
     }
     updateRecipe(id:number,data:any):Observable<any>{
-    return this._http.put(`Recipe/${id}`,{name:data})
+    return this._http.put(`Recipe/${id}`,data)
     }
     
 }

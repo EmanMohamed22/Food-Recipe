@@ -23,7 +23,7 @@ tagId:number=0
 tags:ITag[]=[]
 categoryName:string=''
 categories:ICategory[]=[];
-
+view:boolean=true;
     constructor(private _recipes:RecepieService,
       private _helper:HelperService,
       public dialog: MatDialog,

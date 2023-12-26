@@ -82,6 +82,7 @@
                             <ul class="dropdown-menu ">
                               <li><button class="dropdown-item p-2" type="button" (click)="openDelDialog(item)"><i class="fa-solid fa-trash px-1"></i> Delete</button></li>
                               <li><button class="dropdown-item p-2" type="button" [routerLink]="'/dashboard/dashboard/admin/recepies/add-edit-recipe/'+item.id"><i class="fa-solid fa-pen px-1"></i> Update</button></li>
+                              <li><button class="dropdown-item p-2" type="button" [routerLink]="['/dashboard/dashboard/admin/recepies/add-edit-recipe/',item.id,{params:view}]"><i class="fa-solid fa-eye px-1"></i> View</button></li>
                               
                             </ul>
                           </div>

@@ -11,10 +11,10 @@ export class NavbarComponent implements OnInit{
 
 
   constructor(private _helper:HelperService){
-  this.getUserProfile()
+   
   }
   ngOnInit(): void {
-   
+    this.getUserProfile()
   }
   getUserProfile(){
   this._helper.getCurrentUser().subscribe({

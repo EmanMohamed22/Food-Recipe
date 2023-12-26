@@ -32,15 +32,18 @@ export class ProfileComponent implements OnInit {
 
 
   onSubmit(data:FormGroup){
-let myData = new FormData();
-myData.append('userName',data.value.userName)
-myData.append('email',data.value.email);
+    console.log(data);
+    
+   let myData = new FormData();
+    myData.append('userName',data.value.userName)
+    myData.append('email',data.value.email);
   myData.append('country',data.value.country);
   myData.append('phoneNumber',data.value.phoneNumber);
   myData.append('password',data.value.password);
   myData.append('confirmPassword',data.value.confirmPassword);
   myData.append('profileImage',this.imgSrc,this.imgSrc.name);
 
+  console.log(myData);
 
   this._helper.updateProfile(myData).subscribe({
     next:(res)=>{
@@ -52,7 +55,7 @@ myData.append('email',data.value.email);
       console.log(err);
       
     },complete:()=>{
-        this._router.navigate(['/dashboard/dashboard/home'])
+        this._router.navigate(['/dashboard/'])
         this.getCurentprofile()
     
     }

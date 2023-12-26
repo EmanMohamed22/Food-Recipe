@@ -1,7 +1,7 @@
 .food-card{
     background-color: white;
     padding: 1rem 3rem;
-    border-radius: 16px;
+    border-radius: 18px;
 }
 form{
     margin-top: 1.5rem;
@@ -79,7 +79,7 @@ button[disabled]{
 }
 .bg-active{
     background-color: rgba(0, 146, 71, 0.1);
-    border-left: 10px solid $dark-bg;
+    // border-left: 4px solid $dark-bg;
     transition: all .5s;
 }
 .pointer{
@@ -101,4 +101,16 @@ table{
 }
 .transition{
     transition: all 1s ease-in-out;
+}
+.eye-icon {
+    position: absolute;
+    right: 3%;
+    transform: translateY(50%);
+    cursor: pointer;
+    z-index: 99;
+  }
+  
+
+.dropdown-menu{
+    --bs-dropdown-link-active-bg:rgb(128, 181, 117);
 }

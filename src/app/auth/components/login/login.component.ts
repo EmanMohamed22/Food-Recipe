@@ -53,7 +53,7 @@ this._AuthService.handleLogin(data.value).subscribe({
 },
 complete:()=> {
   
-  this._toastr.success('success');
+  this._toastr.success(localStorage.getItem('userName')!,'Welcome');
    this._router.navigate(['/dashboard/dashboard'])
 },
 })

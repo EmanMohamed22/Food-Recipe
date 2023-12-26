@@ -39,7 +39,7 @@ role:string | null='';
     return this._HttpClient.post('Users/Reset',data)
   }
   changePassword(data:Ichange):Observable<any>{
-    return this._HttpClient.put('Users/Reset',data)
+    return this._HttpClient.put('Users/ChangePassword',data)
   }
 
   getUserToken(){

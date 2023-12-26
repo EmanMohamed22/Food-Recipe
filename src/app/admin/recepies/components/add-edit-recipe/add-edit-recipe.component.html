@@ -98,7 +98,7 @@
                                
                             <div class="form-button text-end mt-2">
                                 <button type="button" class="btn btn-outline-success" routerLink="/dashboard/dashboard/admin/recepies">Cancel</button>
-                                <button type="submit" class="btn btn-success" [disabled]="dataForm.invalid">Save</button>
+                                <button type="submit" class="btn btn-success" *ngIf="!viewParam" [disabled]="dataForm.invalid">Save</button>
                             </div>
                         </div>
                        
